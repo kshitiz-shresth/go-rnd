@@ -17,6 +17,25 @@ func main() {
 	//for custom suffix
 	message("Custom Function for suffix in day of Today's Date")
 	fmt.Println(formatData(currentTime))
+
+	lineBreak()
+	lineBreak()
+
+	message("High Order Functions")
+	newArr := []int{10, 20, 30, 40, 50}
+	fmt.Println(newArr)
+	fmt.Println("To")
+	fmt.Println(reverse(newArr))
+}
+
+func reverse[T any](s []T) []T {
+	l := len(s)
+	r := make([]T, l)
+
+	for i, ele := range s {
+		r[l-i-1] = ele
+	}
+	return r
 }
 
 func message(messageAttr string) {
