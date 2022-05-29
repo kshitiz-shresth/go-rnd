@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"time"
+	"os"
 )
 
 func main() {
@@ -26,6 +27,15 @@ func main() {
 	fmt.Println(newArr)
 	fmt.Println("To")
 	fmt.Println(reverse(newArr))
+
+	//panic
+	panic("a problem")
+
+	_, err := os.Create("/tmp/file")
+	if err != nil {
+		panic(err)
+	}
+
 }
 
 func reverse[T any](s []T) []T {
