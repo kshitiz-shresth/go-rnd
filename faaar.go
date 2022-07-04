@@ -2,9 +2,6 @@ package main
 
 import "fmt"
 
-import {
-	"github.com/kshitiz-shresth/go-rnd/helpers/utils"
-}
 func main() {
 	var funcAsArgumentAndReturnFunc = func(addFunc func(int, int) int, arg1 int, arg2 int) func(int) int {
 		var mySum = addFunc(arg1, arg2)
