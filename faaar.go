@@ -2,6 +2,9 @@ package main
 
 import "fmt"
 
+import {
+	"github.com/kshitiz-shresth/go-rnd/helpers/utils"
+}
 func main() {
 	var funcAsArgumentAndReturnFunc = func(addFunc func(int, int) int, arg1 int, arg2 int) func(int) int {
 		var mySum = addFunc(arg1, arg2)
@@ -18,6 +21,20 @@ func main() {
 		10,
 	)(10)
 
-	fmt.Println(out)
+	fmt.Println("Output as function as argument is", out)
+
+	fmt.Println()
+	var nested = func() {
+		fmt.Println("top function")
+		var nested2 = func() {
+			fmt.Println("middle function")
+			var nested3 = func() {
+				fmt.Println("inner function")
+			}
+			nested3()
+		}
+		nested2()
+	}
+	nested()
 
 }
